@@ -1,0 +1,10 @@
+%% Aufgabe 3
+% Aufgabe 3.1
+clf;
+x = -1:0.001:1;
+y_1 = x.^2;
+y_2 = (exp(-x)./(x.^2+1) + sin(x).^2).^2 + 0.2;
+
+hold on;
+plot(x,y_1,'o')
+plot(x,y_2,'rs')
