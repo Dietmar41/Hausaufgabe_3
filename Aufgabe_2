@@ -1,0 +1,25 @@
+%% Aufgabe 2
+% Aufgabe 2.1 a
+clf;
+delta_t = 0.01;
+t = 0:delta_t:2;
+y = 1;
+
+for i = t
+    y_0 = y;
+    hold on;
+    plot(i,y,'o')
+    f = i^2 - y^2;
+    y = y_0 + delta_t*f;
+end
+
+
+% Aufgabe 2.1 b
+y = 1;
+
+for i = t
+    y_0 = y;
+    plot(i,y,'rs')
+    f = i - abs(y);
+    y = y_0 + delta_t*f;
+end
