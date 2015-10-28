@@ -1,7 +1,7 @@
 %% Aufgabe 4
 % Aufgabe 4.1
 lower = 1;
-upper = 59;
+upper = 100;
 
 %Vektoren - x = alle ausgewählten Zahlen - y = 0 oder 1 für Primzahl
 %ja/nein
@@ -11,22 +11,25 @@ y = (-1 + zeros(size(x)));
 %Hilfsvariablen
 var = 2;
 z=1;
+counter=0;
 
 %Filtern von 1 und 2
 if x(1) == 1
     y(1) = 0;
     y(2) = 1;
+    counter = 1;
     lower = 3;
     z=3;
 elseif x(1) == 2
     y(1) = 1;
+    counter = 1;
     lower = 3;
-    z=3;
+    z=2;
 end
 
 
 for i = lower:upper            
-    for j = var:(i-1)
+for j = var:(i-1)
         if mod(i,j) == 0
             y(z) = 0;
         end
@@ -34,8 +37,10 @@ for i = lower:upper
     
     if y(z) == -1
         y(z) = 1;
+        counter = counter + 1;
     end
     z=z+1;
 end
 
 A = [x y]
+counter
